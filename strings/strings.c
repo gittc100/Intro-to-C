@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /*
     Given a character array s (as a pointer), return the number of 
@@ -9,7 +10,15 @@
 */
 int string_length(char *s)
 {
-
+    int count = 0;
+    while (*s != '\0')
+    {
+        // printf("s*: %c\n", *s);
+        // printf("s: %d\n", s);
+        s++;
+        count++;
+    }
+    return count;
 }
 
 /*
@@ -20,7 +29,38 @@ int string_length(char *s)
 */
 char *reverse_string(char *rv, char *s)
 {
-
+    int x = strlen(s);
+    printf("s: %d\n", x);
+    // printf("original rv: %i\n", rv);
+    int len = strlen(s) - 1;
+    for (int i = strlen(s) - 1; i >= 0; i--)
+    {
+        printf("s+i:%c\n", *(s+i));
+     
+        // printf("rv:%i\n", rv);
+        // printf("rv:%c\n", *rv);
+        if (*(s+i) == ' ')
+        {
+            *rv = ' ';
+        }else
+        {
+            *rv = *(s+i);
+        }
+        // printf("rv:%c\n", *rv);
+        rv++;
+        // printf("rv:%i\n", rv);
+    }
+    *rv = '\0';
+    rv = rv - len -1;
+    while (*rv != '\0')
+    {
+        printf("while *rv: %c\n", *rv);
+        rv++;
+    }
+    rv = rv - len -1;
+    // printf("final rv: %i\n", rv);
+    printf("final *rv: %c\n", *rv);
+    return rv;
 }
 
 #ifndef TESTING
