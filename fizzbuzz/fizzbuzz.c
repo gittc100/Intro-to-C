@@ -10,7 +10,31 @@
 */
 int fizzbuzz(int n)
 {
+    int count = 0;
+    int *ip;
+    // printf("modulo test: %d\n", *ip);
+    ip = &count;
 
+    for (int i = 0; i <= n; i++)
+    {
+        if (i == 0)
+        {
+            continue;
+        }else if (i%3 == 0 && i%5 == 0)
+        {
+            printf("FizzBuzz\n");
+        }else if (i%3 == 0)
+        {
+            printf("Fizz\n");
+        }else if (i%5 == 0)
+        {
+            printf("Buzz\n");
+        }else
+        {
+            *ip = *ip + 1;
+        }
+    }
+    return count;
 }
 
 #ifndef TESTING
