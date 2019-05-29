@@ -29,13 +29,13 @@ int check_strings(char *input, char *expected)
         {
             return 0;
         }
-        // printf("*input internal: %c\n", *input);
-        // printf("*expected internal: %c\n", *expected);
+        printf("*input internal: %c\n", *input);
+        printf("*expected internal: %c\n", *expected);
     }
-    // printf("*input: %c\n", *input);
-    // printf("*expected: %c\n", *expected);
+    printf("*input: %c\n", *input);
+    printf("*expected: %c\n", *expected);
     int x = *input - *expected;
-    // printf("x: %d\n", x);
+    printf("x: %d\n", x);
     return *input - *expected;
 }
 
