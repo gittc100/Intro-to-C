@@ -5,12 +5,15 @@ int check_arrays(int input[], int expected[], int n, int m)
 {
     int i;
 
-    if (n != m) {
+    if (n != m)
+    {
         return 0;
     }
 
-    for (i = 0; i < n; i++) {
-        if (input[i] != expected[i]) {
+    for (i = 0; i < n; i++)
+    {
+        if (input[i] != expected[i])
+        {
             return 0;
         }
     }
@@ -20,12 +23,19 @@ int check_arrays(int input[], int expected[], int n, int m)
 
 int check_strings(char *input, char *expected)
 {
-    for ( ; *input == *expected; input++, expected++) {
-        if (*input == '\0') {
+    for (; *input == *expected; input++, expected++)
+    {
+        if (*input == '\0')
+        {
             return 0;
         }
+        // printf("*input internal: %c\n", *input);
+        // printf("*expected internal: %c\n", *expected);
     }
-    
+    // printf("*input: %c\n", *input);
+    // printf("*expected: %c\n", *expected);
+    int x = *input - *expected;
+    // printf("x: %d\n", x);
     return *input - *expected;
 }
 
